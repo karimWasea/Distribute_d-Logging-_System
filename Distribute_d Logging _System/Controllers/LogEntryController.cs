@@ -32,8 +32,8 @@ namespace Distribute_d_Logging__System.Controllers
             try
             {
                 // Retrieve all log entries with optional filters and pagination
-                await _s3Service.UploadLogAsync(logEntrySearchDto.Service, logEntrySearchDto.Level, logEntrySearchDto
-                .Level);
+                //await _s3Service.UploadLogAsync(logEntrySearchDto.Service, logEntrySearchDto.Level, logEntrySearchDto
+                //.Level);
 
                 var logEntries = await _logEntryRepository.GetLogEntriesAsync(logEntrySearchDto);
 
@@ -46,6 +46,7 @@ namespace Distribute_d_Logging__System.Controllers
             }
         }
 
+      
 
 
         [HttpGet]

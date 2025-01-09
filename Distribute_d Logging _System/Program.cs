@@ -78,8 +78,17 @@ builder.Services.AddCors(options =>
         policy.AllowAnyOrigin()
               .AllowAnyMethod()
               .AllowAnyHeader());
-}); 
-
+});
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:51410") // Angular's default port
+                   .AllowAnyHeader()
+                   .AllowAnyMethod();
+        });
+});
 
 
 // Configure Logging
